@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\InstallmentPlanController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ReportsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -29,6 +30,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Payments
     Route::resource('payments', PaymentController::class);
     Route::post('/payments/{payment}/mark-paid', [PaymentController::class, 'markPaid'])->name('payments.mark-paid');
+    
+    // Reports
+    Route::get('/reports', [ReportsController::class, 'index'])->name('reports.index');
+    Route::get('/reports/revenue', [ReportsController::class, 'revenue'])->name('reports.revenue');
+    Route::get('/reports/overdue', [ReportsController::class, 'overdue'])->name('reports.overdue');
+    Route::get('/reports/customers', [ReportsController::class, 'customers'])->name('reports.customers');
     
     // Profile
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -13,7 +13,108 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        <i class="fas fa-tachometer-alt me-1"></i> {{ __('Dashboard') }}
+                    </x-nav-link>
+                    
+                    <!-- Products Dropdown -->
+                    <div class="hidden sm:flex sm:items-center">
+                        <x-dropdown align="left" width="48">
+                            <x-slot name="trigger">
+                                <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 hover:text-gray-700 focus:outline-none transition ease-in-out duration-150 {{ request()->routeIs('products.*') ? 'text-gray-900' : '' }}">
+                                    <i class="fas fa-box me-1"></i> {{ __('Products') }}
+                                    <div class="ms-1">
+                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </x-slot>
+                            <x-slot name="content">
+                                <x-dropdown-link :href="route('products.index')">
+                                    <i class="fas fa-list me-1"></i> {{ __('All Products') }}
+                                </x-dropdown-link>
+                                <x-dropdown-link :href="route('products.create')">
+                                    <i class="fas fa-plus me-1"></i> {{ __('Add Product') }}
+                                </x-dropdown-link>
+                            </x-slot>
+                        </x-dropdown>
+                    </div>
+                    
+                    <!-- Customers Dropdown -->
+                    <div class="hidden sm:flex sm:items-center">
+                        <x-dropdown align="left" width="48">
+                            <x-slot name="trigger">
+                                <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 hover:text-gray-700 focus:outline-none transition ease-in-out duration-150 {{ request()->routeIs('customers.*') ? 'text-gray-900' : '' }}">
+                                    <i class="fas fa-users me-1"></i> {{ __('Customers') }}
+                                    <div class="ms-1">
+                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </x-slot>
+                            <x-slot name="content">
+                                <x-dropdown-link :href="route('customers.index')">
+                                    <i class="fas fa-list me-1"></i> {{ __('All Customers') }}
+                                </x-dropdown-link>
+                                <x-dropdown-link :href="route('customers.create')">
+                                    <i class="fas fa-user-plus me-1"></i> {{ __('Add Customer') }}
+                                </x-dropdown-link>
+                            </x-slot>
+                        </x-dropdown>
+                    </div>
+                    
+                    <!-- Installment Plans Dropdown -->
+                    <div class="hidden sm:flex sm:items-center">
+                        <x-dropdown align="left" width="48">
+                            <x-slot name="trigger">
+                                <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 hover:text-gray-700 focus:outline-none transition ease-in-out duration-150 {{ request()->routeIs('installment-plans.*') ? 'text-gray-900' : '' }}">
+                                    <i class="fas fa-file-contract me-1"></i> {{ __('Installments') }}
+                                    <div class="ms-1">
+                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </x-slot>
+                            <x-slot name="content">
+                                <x-dropdown-link :href="route('installment-plans.index')">
+                                    <i class="fas fa-list me-1"></i> {{ __('All Plans') }}
+                                </x-dropdown-link>
+                                <x-dropdown-link :href="route('installment-plans.create')">
+                                    <i class="fas fa-plus me-1"></i> {{ __('Create Plan') }}
+                                </x-dropdown-link>
+                            </x-slot>
+                        </x-dropdown>
+                    </div>
+                    
+                    <!-- Payments Dropdown -->
+                    <div class="hidden sm:flex sm:items-center">
+                        <x-dropdown align="left" width="48">
+                            <x-slot name="trigger">
+                                <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 hover:text-gray-700 focus:outline-none transition ease-in-out duration-150 {{ request()->routeIs('payments.*') ? 'text-gray-900' : '' }}">
+                                    <i class="fas fa-money-bill-wave me-1"></i> {{ __('Payments') }}
+                                    <div class="ms-1">
+                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </x-slot>
+                            <x-slot name="content">
+                                <x-dropdown-link :href="route('payments.index')">
+                                    <i class="fas fa-list me-1"></i> {{ __('All Payments') }}
+                                </x-dropdown-link>
+                                <x-dropdown-link :href="route('payments.create')">
+                                    <i class="fas fa-plus me-1"></i> {{ __('Record Payment') }}
+                                </x-dropdown-link>
+                            </x-slot>
+                        </x-dropdown>
+                    </div>
+                    
+                    <!-- Reports -->
+                    <x-nav-link :href="route('reports.index')" :active="request()->routeIs('reports.*')">
+                        <i class="fas fa-chart-bar me-1"></i> {{ __('Reports') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -68,8 +169,67 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                <i class="fas fa-tachometer-alt me-1"></i> {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            
+            <!-- Products Section -->
+            <div class="border-t border-gray-200 pt-2">
+                <div class="px-4 py-2 text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                    {{ __('Products') }}
+                </div>
+                <x-responsive-nav-link :href="route('products.index')" :active="request()->routeIs('products.index')">
+                    <i class="fas fa-list me-1"></i> {{ __('All Products') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('products.create')" :active="request()->routeIs('products.create')">
+                    <i class="fas fa-plus me-1"></i> {{ __('Add Product') }}
+                </x-responsive-nav-link>
+            </div>
+            
+            <!-- Customers Section -->
+            <div class="border-t border-gray-200 pt-2">
+                <div class="px-4 py-2 text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                    {{ __('Customers') }}
+                </div>
+                <x-responsive-nav-link :href="route('customers.index')" :active="request()->routeIs('customers.index')">
+                    <i class="fas fa-list me-1"></i> {{ __('All Customers') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('customers.create')" :active="request()->routeIs('customers.create')">
+                    <i class="fas fa-user-plus me-1"></i> {{ __('Add Customer') }}
+                </x-responsive-nav-link>
+            </div>
+            
+            <!-- Installment Plans Section -->
+            <div class="border-t border-gray-200 pt-2">
+                <div class="px-4 py-2 text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                    {{ __('Installment Plans') }}
+                </div>
+                <x-responsive-nav-link :href="route('installment-plans.index')" :active="request()->routeIs('installment-plans.index')">
+                    <i class="fas fa-list me-1"></i> {{ __('All Plans') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('installment-plans.create')" :active="request()->routeIs('installment-plans.create')">
+                    <i class="fas fa-plus me-1"></i> {{ __('Create Plan') }}
+                </x-responsive-nav-link>
+            </div>
+            
+            <!-- Payments Section -->
+            <div class="border-t border-gray-200 pt-2">
+                <div class="px-4 py-2 text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                    {{ __('Payments') }}
+                </div>
+                <x-responsive-nav-link :href="route('payments.index')" :active="request()->routeIs('payments.index')">
+                    <i class="fas fa-list me-1"></i> {{ __('All Payments') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('payments.create')" :active="request()->routeIs('payments.create')">
+                    <i class="fas fa-plus me-1"></i> {{ __('Record Payment') }}
+                </x-responsive-nav-link>
+            </div>
+            
+            <!-- Reports Section -->
+            <div class="border-t border-gray-200 pt-2">
+                <x-responsive-nav-link :href="route('reports.index')" :active="request()->routeIs('reports.*')">
+                    <i class="fas fa-chart-bar me-1"></i> {{ __('Reports') }}
+                </x-responsive-nav-link>
+            </div>
         </div>
 
         <!-- Responsive Settings Options -->
