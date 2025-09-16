@@ -11,29 +11,21 @@ A comprehensive web-based Installment Management System built with Laravel (PHP)
    - Password-protected access to all system features
    - Session management and user profile management
 
-#### 2. **Enhanced Navigation System**
-   - **Dual Navigation Options**: Choose between top navigation bar or sidebar
-   - **Quick Module Access**: Easy access to all system modules
-   - **Dropdown Menus**: Organized access to create/view operations
-   - **Mobile Responsive**: Fully responsive navigation for all devices
-   - **Visual Icons**: Font Awesome icons for better identification
-   - **Active Route Indicators**: Visual feedback for current page
-
-#### 3. **Product/Service Catalog Management**
+#### 2. **Product/Service Catalog Management**
    - Add, edit, delete, and view products
    - Track product inventory (stock quantity)
    - Product categorization
    - SKU management
    - Price management
 
-#### 4. **Customer Management**
+#### 3. **Customer Management**
    - Complete customer registration with personal details
    - Customer credit limit management
    - CNIC (National ID) tracking
    - Customer status tracking (Active/Inactive/Blocked)
    - Address and contact information management
 
-#### 5. **Installment Plan Creation & Management**
+#### 4. **Installment Plan Creation & Management**
    - Create flexible installment plans for customers
    - Support for different payment frequencies (Monthly, Weekly, Bi-weekly, Quarterly)
    - Interest rate calculation
@@ -41,19 +33,19 @@ A comprehensive web-based Installment Management System built with Laravel (PHP)
    - Automatic installment amount calculation
    - Plan status tracking (Active, Completed, Cancelled, Defaulted)
 
-#### 6. **Payment Tracking & Recording**
+#### 5. **Payment Tracking & Recording**
    - Record customer payments against installment plans
    - Multiple payment methods support (Cash, Bank Transfer, Card, Cheque, Online)
    - Payment status tracking (Pending, Paid, Late, Failed, Refunded)
    - Late fee calculation
    - Payment reference number tracking
 
-#### 7. **Invoice Generation**
+#### 6. **Invoice Generation**
    - Automatic invoice generation for installments
    - Invoice status tracking (Draft, Sent, Paid, Overdue, Cancelled)
    - Tax calculation support
 
-#### 8. **Dashboard & Analytics**
+#### 7. **Dashboard & Analytics**
    - Real-time statistics display
    - Total customers and active customers count
    - Active and completed installment plans tracking
@@ -62,14 +54,11 @@ A comprehensive web-based Installment Management System built with Laravel (PHP)
    - Recent activities monitoring
    - Overdue payments alerts
 
-#### 9. **Comprehensive Reporting Module**
-   - **Revenue Reports**: Track total and monthly revenue
-   - **Overdue Analysis**: Monitor overdue payments and amounts
-   - **Customer Analytics**: Top customers and payment behavior
-   - **Monthly Trends**: Visual charts for revenue trends
-   - **Payment Method Analysis**: Track payments by method
-   - **Product Performance**: Most popular products by plans
-   - **Customer Behavior**: On-time vs late payment tracking
+#### 8. **Reporting Features**
+   - View overdue payments
+   - Track payment history
+   - Monitor installment plan progress
+   - Customer payment history
 
 ## 🔗 System URLs and Endpoints
 
